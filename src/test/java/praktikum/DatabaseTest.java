@@ -14,7 +14,8 @@ public class DatabaseTest extends TestCase {
 
     @Test
     public void testAvailableBuns() {
-        Assert.assertEquals(buns, database.availableBuns());
+        Assert.assertEquals(3, database.availableBuns().size());
+        Assert.assertTrue(database.availableBuns().contains("black bun"));
     }
 
     @Test
