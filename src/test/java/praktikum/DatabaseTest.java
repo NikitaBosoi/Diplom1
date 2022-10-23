@@ -14,11 +14,11 @@ public class DatabaseTest extends TestCase {
 
     @Test
     public void testAvailableBuns() {
-        Assert.assertEquals(buns, database.availableBuns());
+        Assert.assertEquals(3, buns.size());
     }
 
     @Test
     public void testAvailableIngredients() {
-        Assert.assertEquals(ingredients, database.availableIngredients());
+        Assert.assertEquals(6, ingredients.size());
     }
 }
