@@ -31,16 +31,6 @@ public class BurgerTest extends TestCase {
         Assert.assertEquals(List.of("Pelmehka", "Pelmehka2"), getListNamesFromIngredients());
     }
 
-    private List getListNamesFromIngredients() {
-        Mockito.when(mockIngredient.getName()).thenReturn("Pelmehka");
-        Mockito.when(mockIngredient2.getName()).thenReturn("Pelmehka2");
-        List myList = new ArrayList();
-        for (Ingredient ingredient : burger.ingredients) {
-            myList.add(ingredient.getName());
-        }
-        return myList;
-    }
-
     @Test
     public void testRemoveIngredient() {
         burger.addIngredient(mockIngredient);
@@ -91,5 +81,15 @@ public class BurgerTest extends TestCase {
                 "\r\n" +
                 "Price: 600,000000\r\n";
         Assert.assertEquals(expected, burger.getReceipt());
+    }
+
+    private List getListNamesFromIngredients() {
+        Mockito.when(mockIngredient.getName()).thenReturn("Pelmehka");
+        Mockito.when(mockIngredient2.getName()).thenReturn("Pelmehka2");
+        List myList = new ArrayList();
+        for (Ingredient ingredient : burger.ingredients) {
+            myList.add(ingredient.getName());
+        }
+        return myList;
     }
 }
